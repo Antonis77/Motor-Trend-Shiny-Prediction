@@ -30,7 +30,8 @@ consumption<-function (cyl,hp,wt) {
 consumptionPlot<-function (cyl,hp,wt) {
   newdata<<-data.frame(cyl=as.factor(cyl),hp=hp,wt=wt)
   x<<-c(round(predict(autoFit,newdata),1),round(predict(manualFit,newdata),1))
-  barplot(x, xlab='Gear Type',ylab="Miles per Gallon", col='lightblue',main='Barplot',names.arg=c("auto","Manual"))
+  barplot(x, xlab='Gear Type',ylab="Miles per Gallon", ylim=c(0,35),col='lightblue',main='Barplot',
+          names.arg=c("Auto","Manual"),space=0.5)
 }
 
 #--------------------------------------------------------------------------------------------------
